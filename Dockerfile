@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 # Install the required packages
-RUN apk add --update tor sudo
+RUN apk add --update --no-cache tor
 
 # Expose the ports made available through Tor
 EXPOSE 9050
