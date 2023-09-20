@@ -8,6 +8,7 @@ EXPOSE 9050 5353/udp
 
 # Populate the tor-router configurations
 COPY . /opt/tor-router
+RUN chmod +x /opt/tor-router/entrypoint.sh
 
 # Set the container's WORKDIR and ENTRYPOINT
 WORKDIR /opt/tor-router
