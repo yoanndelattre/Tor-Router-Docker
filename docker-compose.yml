@@ -6,10 +6,5 @@ services:
     container_name: tor-router
     hostname: tor-router
     restart: always
-    cap_add:
-      - NET_ADMIN
-    dns:
-      - 127.0.0.1
     ports:
-      - 5353:5353/udp
       - 9050:9050

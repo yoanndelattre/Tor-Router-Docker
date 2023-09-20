@@ -18,14 +18,6 @@ fi
 
 echo 'Verifying environment'
 
-# TODO: Detect --net=host and fail
-
-# Check for CAP_NET_ADMIN
-if ! iptables -nL &> /dev/null; then
-  >&2 echo 'Container requires CAP_NET_ADMIN, add using `--cap-add NET_ADMIN`.'
-  exit 1
-fi
-
 # Ensure that the container only has eth0 and lo to start with
 for interface in $(ip link show | awk '/^[0-9]*:/ {print $2}' | sed -e 's/:$//' -e 's/@.*$//'); do
   if [ "$interface" != "lo" ] && [ "$interface" != "eth0" ]; then
@@ -40,9 +32,6 @@ echo 'Setting up container'
 
 # Setup the TOR_ROUTER_USER
 adduser -h "${TOR_ROUTER_HOME}" -u "${TOR_ROUTER_UID}" -D "${TOR_ROUTER_USER}"
-
-# Rstr
-iptables-restore "${TOR_ROUTER_HOME}/iptables.rules"
 
 # Run tor as the TOR_ROUTER_USER
 echo 'Starting the Tor router'

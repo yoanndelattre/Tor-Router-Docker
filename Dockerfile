@@ -1,10 +1,10 @@
-FROM alpine:3.6
+FROM alpine:latest
 
 # Install the required packages
-RUN apk add --update tor iptables sudo
+RUN apk add --update tor sudo
 
 # Expose the ports made available through Tor
-EXPOSE 9050 5353/udp
+EXPOSE 9050
 
 # Populate the tor-router configurations
 COPY . /opt/tor-router
