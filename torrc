@@ -1,6 +1,2 @@
-# Setup Tor SOCKS Proxy
-SocksPort 9050
-SocksListenAddress 0.0.0.0
-
-# Data Directory
+SocksPort 0.0.0.0:9050
 DataDirectory /tor_data
