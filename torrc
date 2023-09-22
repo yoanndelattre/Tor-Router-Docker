@@ -1,1 +1,2 @@
 SocksPort 0.0.0.0:9050
+DataDirectory /tor_data
