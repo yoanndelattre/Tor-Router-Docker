@@ -8,7 +8,6 @@ services:
     restart: always
     ports:
       - 9050:9050
-      - 53:5353/udp
     volumes:
       - tor_data:/tor_data
 

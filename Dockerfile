@@ -6,6 +6,6 @@ RUN mkdir -p /tor_data && \
     chown -R tor /etc/tor
 USER tor
 VOLUME ["/tor_data"]
-EXPOSE 9050 5353/udp
+EXPOSE 9050
 ENTRYPOINT ["tor"]
 CMD ["-f", "/etc/tor/torrc"]

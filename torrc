@@ -2,9 +2,5 @@
 SocksPort 9050
 SocksListenAddress 0.0.0.0
 
-# Setup DNS server
-DNSPort 5353
-DNSListenAddress 0.0.0.0
-
 # Data Directory
 DataDirectory /tor_data
