@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   tor-router:
-    image: registry.gitlab.com/yoanndelattre/tor-router-docker:latest
+    image: ghcr.io/yoanndelattre/tor-router-docker:main
     container_name: tor-router
     hostname: tor-router
     restart: always
